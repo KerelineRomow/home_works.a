@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Заказ Суши</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+          background-color: #326ba8;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          display: flex;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0;
+      }
+
+      #form_container {
+          margin: 50px auto;
+          border-radius: 20px;
+          padding: 40px;
+          max-width: 600px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+          background-color: #ffffff;
+      }
+
+      h2 {
+          color: #2c3e50;
+          font-weight: 700;
+          margin-bottom: 30px;
+      }
+
+      .form-label {
+          font-weight: 600;
+          color: #4a5568;
+      }
+
+      .form-control, .form-select {
+          border: 2px solid #edf2f7;
+          border-radius: 10px;
+          padding: 10px 15px;
+      }
+
+      .form-control:focus, .form-select:focus {
+          border-color: #326ba8;
+          box-shadow: 0 0 0 3px rgba(50, 107, 168, 0.2);
+      }
+
+      .btn-primary {
+          background-color: #326ba8;
+          border: none;
+          padding: 12px;
+          border-radius: 10px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+          background-color: #265282;
+          transform: translateY(-1px);
+      }
+
+      hr {
+          border-top: 1px solid #eee;
+          margin: 25px 0;
+          opacity: 1;
+      }
+
+      #priceValue {
+          font-weight: bold;
+          color: #326ba8;
+      }
+    </style>
+  </head>
+  <body>
+
+      <div class="container">
+          <div class="row d-flex justify-content-center">
+              <div id="form_container" class="col-12 col-md-8 col-lg-6">
+                  <h2 class="text-center">🍣 Заказ Суши</h2>
+
+                    <form action="" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя:</label>
+                            <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Адрес доставки:</label>
+                            <input type="text" name="address" class="form-control" placeholder="Улица, дом, квартира" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Телефон:</label>
+                                <input type="tel" name="phone" class="form-control" placeholder="+380" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control" placeholder="example@" required>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="mb-3">
+                            <label for="sushi_type" class="form-label">Выберите суши:</label>
+                            <select class="form-select" name="sushi_type" required>
+                                <option value="">Выберите из списка...</option>
+                                <option>Филадельфия классик</option>
+                                <option>Калифорния в кунжуте</option>
+                                <option>Зеленый дракон</option>
+                                <option>Сет "Для друзей"</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="sticks_count" class="form-label">Палочки (шт):</label>
+                                <input type="number" name="sticks_count" class="form-control"
+                                       value="1" min="1" max="20" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label d-block">Вид:</label>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="sticks_type" id="regular" checked>
+                                    <label class="form-check-label" for="regular">Обычные</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="sticks_type" id="training">
+                                    <label class="form-check-label" for="training">Учебные</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="checkbox" class="form-check-input" name="napkins" id="napkins">
+                            <label for="napkins" class="form-check-label ms-1">Нужны салфетки?</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Комментарий:</label>
+                            <textarea class="form-control" name="comment" rows="2" placeholder="Укажите детали заказа"></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                         <label class="form-label">Чаевые курьеру: <span id="priceValue">50</span> ₴</label>
+                         <input type="range" class="form-range" min="0" max="200" step="10" value="50" id="priceRange"
+                                oninput="document.getElementById('priceValue').innerText = this.value">
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary w-100">Заказать сейчас</button>
+                        </div>
+                    </form>
+              </div>
+          </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
