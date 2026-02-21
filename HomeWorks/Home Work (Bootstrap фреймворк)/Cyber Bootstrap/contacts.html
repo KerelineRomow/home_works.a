@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacts Cyber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      @keyframes flicker {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 4px #000; }
+        20%, 24%, 55% { text-shadow: 0 0 10px #fff, 0 0 20px #ff003c; }
+      }
+      .navbar-brand {
+        animation: flicker 3s infinite;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .cyber-text { color: #00f3ff !important; text-shadow: 0 0 5px #00f3ff; }
+      .contact-link { color: #042252; text-decoration: none; font-weight: bold; border-bottom: 2px solid #042252; }
+      .contact-link:hover { color: #ff003c; border-color: #ff003c; }
+    </style>
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-md fixed-top shadow" style="background-color: #FFD700;">
+      <div class="container-fluid">
+        <a class="navbar-brand text-dark fw-bold" href="index.html">Cyberpunk</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.html">Домашняя страница</a></li>
+            <li class="nav-item"><a class="nav-link text-dark fw-medium" href="about.html">Про нас</a></li>
+            <li class="nav-item"><a class="nav-link text-dark fw-medium" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container" style="margin-top: 80px;">
+      <div class="p-5 rounded-4 shadow-lg text-dark" style="background-color: #00f3ff; border: 3px solid #000;">
+        <div class="container col-xxl-8 px-4 py-2">
+          <div class="row flex-lg-row-reverse align-items-center g-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="https://preview.redd.it/6mgraurojub71.jpg?width=1080&crop=smart&auto=webp&s=0a06c188c933fe870537385ee17818a7b7c18bd5"
+                   class="d-block mx-lg-auto img-fluid rounded-3 shadow" alt="Secure Terminal" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6 text-start">
+              <h1 class="display-6 fw-bold lh-1 mb-3 text-uppercase" style="color: #042252;">
+                К͟͞а͟͞н͟͞а͟͞л͟͞ ͟͞с͟͞в͟͞я͟͞з͟͞и͟͞
+              </h1>
+              <p class="lead fw-medium mt-4" style="line-height: 1.8; letter-spacing: 0.5px; opacity: 0.9;">
+                Линия защищена протоколом ICE. Оставляй сообщение, если твой дек еще не поджарили корпораты. <br><br>
+                <strong>Локация:</strong> Мегабашня H10, Квартира 0716 <br>
+                <strong>Терминал:</strong> <a href="mailto:v_nightcity@net.nc" class="contact-link">v_nightcity@net.nc</a> <br>
+              </p>
+              <div class="mt-4 p-3 border border-dark rounded bg-light bg-opacity-25">
+                <small class="fw-bold text-uppercase">Статус сети: <span class="text-success">Online</span></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-secondary">
+          <p class="col-md-4 mb-0 cyber-text">&copy; 2026 Roman, Inc. Night City Survived.</p>
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a class="nav-link px-2 cyber-text" href="index.html">Домашняя</a></li>
+            <li class="nav-item"><a class="nav-link px-2 cyber-text" href="about.html">Про нас</a></li>
+            <li class="nav-item"><a class="nav-link px-2 cyber-text" href="contacts.html">Контакты</a></li>
+          </ul>
+        </footer>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
